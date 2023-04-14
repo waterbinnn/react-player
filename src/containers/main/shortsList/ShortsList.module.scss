@@ -1,0 +1,25 @@
+.player-wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px;
+    margin: 0 -5%;
+    overflow-x: scroll;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.thumbnail {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 172px;
+    height: 304px;
+    border-radius: 10px;
+    background-color: #000000;
+    cursor: pointer;
+}
