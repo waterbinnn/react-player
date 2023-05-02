@@ -8,3 +8,23 @@
     width: 30px;
     height: 30px;
 }
+
+.shorts-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.shorts-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.shorts-wrap {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    max-width: 450px;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+}

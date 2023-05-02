@@ -6,13 +6,15 @@ const cx = classNames.bind(styles);
 
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import { DataType, popularList } from "@/contents/data";
+import { Video } from "./video/Video";
 
-export const Shorts = () => {
-  const [isWindow, setIsWindow] = useState<boolean>(false);
-  useEffect(() => {
-    setIsWindow(true);
-  }, []);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+interface ShortProps {
+  popularList: DataType[];
+  hotList: DataType[];
+}
+
+export const Shorts = ({ popularList, hotList }: ShortProps) => {
   const router = useRouter();
 
   /**
@@ -27,22 +29,19 @@ export const Shorts = () => {
 
   /**
    * section > div > react player 구조로 마크업
-   * 플레이어 임포트 
+   * 플레이어 임포트
    * mute
    * 기본 컨트롤러 없애고 커스텀
    */
 
-
   return (
     <>
-      <div className={cx("container")}>
-        <section>
+      <div className={cx("shorts-container")}>
+        <section className={cx("shorts-wrap")}>
           <h2 className="visually-hidden">쇼츠</h2>
-          <button
-            className={cx("btn-back")}
-            onClick={() => router.back()}
-          ></button>
-
+          {popularList.map((video: DataType) => (
+            <Video data={video} key={video.id} />
+          ))}
         </section>
       </div>
     </>
