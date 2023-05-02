@@ -4,7 +4,7 @@
     gap: 8px;
     padding: 10px;
     margin: 0 -5%;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .list {
@@ -17,9 +17,17 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    width: 172px;
-    height: 304px;
+    min-width: 140.5px;
+    width: auto;
+    height: 250px;
     border-radius: 10px;
     background-color: #000000;
     cursor: pointer;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 400;
+    color: #e5e5e5;
+    padding: 8px;
 }
